@@ -1,0 +1,19 @@
+spring: 
+  application:
+    name: gateway-vuelo
+    
+eureka: 
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+      
+server: 
+ port: 8084
+       
+zuul:
+  routes:      
+    administration-service-vuelo:
+      path: /administration-service-vuelo/**
+      service-id: administration-service-vuelo
